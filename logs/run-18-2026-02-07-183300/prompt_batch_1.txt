@@ -1,0 +1,73 @@
+Fix 5 CodeQL security issue(s) in https://github.com/marius-posa/dvpwa (branch: main).
+
+Issue IDs: CQLF-R18-0001, CQLF-R18-0002, CQLF-R18-0003, CQLF-R18-0004, CQLF-R18-0005
+Category: xss | Severity: HIGH (max CVSS: 7.8)
+
+Issues to fix:
+
+### CQLF-R18-0001: js/xss-through-dom (js/xss-through-dom)
+- Severity: HIGH (7.8)
+- CWE: cwe-79, cwe-116
+- Location(s): sqli/static/js/materialize.js:2850
+- Description: [DOM text](1) is reinterpreted as HTML without escaping meta-characters.
+- Rule: DOM text reinterpreted as HTML
+- Guidance: # DOM text reinterpreted as HTML
+Extracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.
+
+A webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scrip
+
+### CQLF-R18-0002: js/xss-through-dom (js/xss-through-dom)
+- Severity: HIGH (7.8)
+- CWE: cwe-79, cwe-116
+- Location(s): sqli/static/js/materialize.js:2856
+- Description: [DOM text](1) is reinterpreted as HTML without escaping meta-characters.
+- Rule: DOM text reinterpreted as HTML
+- Guidance: # DOM text reinterpreted as HTML
+Extracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.
+
+A webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scrip
+
+### CQLF-R18-0003: js/xss-through-dom (js/xss-through-dom)
+- Severity: HIGH (7.8)
+- CWE: cwe-79, cwe-116
+- Location(s): sqli/static/js/materialize.js:4566
+- Description: [DOM text](1) is reinterpreted as HTML without escaping meta-characters.
+- Rule: DOM text reinterpreted as HTML
+- Guidance: # DOM text reinterpreted as HTML
+Extracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.
+
+A webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scrip
+
+### CQLF-R18-0004: js/xss-through-dom (js/xss-through-dom)
+- Severity: HIGH (7.8)
+- CWE: cwe-79, cwe-116
+- Location(s): sqli/static/js/materialize.js:4586
+- Description: [DOM text](1) is reinterpreted as HTML without escaping meta-characters.
+- Rule: DOM text reinterpreted as HTML
+- Guidance: # DOM text reinterpreted as HTML
+Extracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.
+
+A webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scrip
+
+### CQLF-R18-0005: js/xss-through-dom (js/xss-through-dom)
+- Severity: HIGH (7.8)
+- CWE: cwe-79, cwe-116
+- Location(s): sqli/static/js/materialize.js:4618
+- Description: [DOM text](1) is reinterpreted as HTML without escaping meta-characters.
+- Rule: DOM text reinterpreted as HTML
+- Guidance: # DOM text reinterpreted as HTML
+Extracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.
+
+A webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scrip
+
+Instructions:
+1. Clone https://github.com/marius-posa/dvpwa and create a new branch from main.
+2. Fix ALL the issues listed above. Track which issue IDs you are fixing.
+3. Ensure fixes don't break existing functionality.
+4. Run existing tests if available to verify.
+5. Create a PR on https://github.com/marius-posa/dvpwa with a clear description listing each issue ID fixed.
+6. Title the PR exactly: 'fix(CQLF-R18-0001,CQLF-R18-0002,CQLF-R18-0003,CQLF-R18-0004,CQLF-R18-0005): resolve xss security issues'
+7. In the PR body, list each issue ID (CQLF-R18-0001, CQLF-R18-0002, CQLF-R18-0003, CQLF-R18-0004, CQLF-R18-0005) and describe the fix applied.
+
+Files to focus on:
+- sqli/static/js/materialize.js

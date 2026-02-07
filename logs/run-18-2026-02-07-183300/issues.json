@@ -1,0 +1,265 @@
+[
+  {
+    "id": "CQLF-R18-0001",
+    "rule_id": "js/xss-through-dom",
+    "rule_name": "js/xss-through-dom",
+    "rule_description": "DOM text reinterpreted as HTML",
+    "rule_help": "# DOM text reinterpreted as HTML\nExtracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.\n\nA webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scripting attack.\n\n\n## Recommendation\nTo guard against cross-site scripting, consider using contextual output encoding/escaping before writing text to the page, or one of the other solutions that are mentioned in the References section below.\n\n\n## Example\nThe following example shows a webpage using a `data-target` attribute to select and manipulate a DOM element using the JQuery library. In the example, the `data-target` attribute is read into the `target` variable, and the `$` function is then suppo",
+    "message": "[DOM text](1) is reinterpreted as HTML without escaping meta-characters.",
+    "severity_score": 7.8,
+    "severity_tier": "high",
+    "cwes": [
+      "cwe-79",
+      "cwe-116"
+    ],
+    "cwe_family": "xss",
+    "locations": [
+      {
+        "file": "sqli/static/js/materialize.js",
+        "start_line": 2850,
+        "end_line": 2850,
+        "start_column": 49
+      }
+    ],
+    "level": "warning",
+    "partial_fingerprints": {
+      "primaryLocationLineHash": "d77edebf03cd9bd0:1",
+      "primaryLocationStartColumnFingerprint": "38"
+    },
+    "fingerprint": "bbc3c6f669b187f8"
+  },
+  {
+    "id": "CQLF-R18-0002",
+    "rule_id": "js/xss-through-dom",
+    "rule_name": "js/xss-through-dom",
+    "rule_description": "DOM text reinterpreted as HTML",
+    "rule_help": "# DOM text reinterpreted as HTML\nExtracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.\n\nA webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scripting attack.\n\n\n## Recommendation\nTo guard against cross-site scripting, consider using contextual output encoding/escaping before writing text to the page, or one of the other solutions that are mentioned in the References section below.\n\n\n## Example\nThe following example shows a webpage using a `data-target` attribute to select and manipulate a DOM element using the JQuery library. In the example, the `data-target` attribute is read into the `target` variable, and the `$` function is then suppo",
+    "message": "[DOM text](1) is reinterpreted as HTML without escaping meta-characters.",
+    "severity_score": 7.8,
+    "severity_tier": "high",
+    "cwes": [
+      "cwe-79",
+      "cwe-116"
+    ],
+    "cwe_family": "xss",
+    "locations": [
+      {
+        "file": "sqli/static/js/materialize.js",
+        "start_line": 2856,
+        "end_line": 2856,
+        "start_column": 24
+      }
+    ],
+    "level": "warning",
+    "partial_fingerprints": {
+      "primaryLocationLineHash": "a074acf68db4c029:1",
+      "primaryLocationStartColumnFingerprint": "15"
+    },
+    "fingerprint": "c329a38c14ad6991"
+  },
+  {
+    "id": "CQLF-R18-0003",
+    "rule_id": "js/xss-through-dom",
+    "rule_name": "js/xss-through-dom",
+    "rule_description": "DOM text reinterpreted as HTML",
+    "rule_help": "# DOM text reinterpreted as HTML\nExtracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.\n\nA webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scripting attack.\n\n\n## Recommendation\nTo guard against cross-site scripting, consider using contextual output encoding/escaping before writing text to the page, or one of the other solutions that are mentioned in the References section below.\n\n\n## Example\nThe following example shows a webpage using a `data-target` attribute to select and manipulate a DOM element using the JQuery library. In the example, the `data-target` attribute is read into the `target` variable, and the `$` function is then suppo",
+    "message": "[DOM text](1) is reinterpreted as HTML without escaping meta-characters.",
+    "severity_score": 7.8,
+    "severity_tier": "high",
+    "cwes": [
+      "cwe-79",
+      "cwe-116"
+    ],
+    "cwe_family": "xss",
+    "locations": [
+      {
+        "file": "sqli/static/js/materialize.js",
+        "start_line": 4566,
+        "end_line": 4566,
+        "start_column": 33
+      }
+    ],
+    "level": "warning",
+    "partial_fingerprints": {
+      "primaryLocationLineHash": "992763b7e031b263:1",
+      "primaryLocationStartColumnFingerprint": "26"
+    },
+    "fingerprint": "9fe54db59c216e1f"
+  },
+  {
+    "id": "CQLF-R18-0004",
+    "rule_id": "js/xss-through-dom",
+    "rule_name": "js/xss-through-dom",
+    "rule_description": "DOM text reinterpreted as HTML",
+    "rule_help": "# DOM text reinterpreted as HTML\nExtracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.\n\nA webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scripting attack.\n\n\n## Recommendation\nTo guard against cross-site scripting, consider using contextual output encoding/escaping before writing text to the page, or one of the other solutions that are mentioned in the References section below.\n\n\n## Example\nThe following example shows a webpage using a `data-target` attribute to select and manipulate a DOM element using the JQuery library. In the example, the `data-target` attribute is read into the `target` variable, and the `$` function is then suppo",
+    "message": "[DOM text](1) is reinterpreted as HTML without escaping meta-characters.",
+    "severity_score": 7.8,
+    "severity_tier": "high",
+    "cwes": [
+      "cwe-79",
+      "cwe-116"
+    ],
+    "cwe_family": "xss",
+    "locations": [
+      {
+        "file": "sqli/static/js/materialize.js",
+        "start_line": 4586,
+        "end_line": 4586,
+        "start_column": 33
+      }
+    ],
+    "level": "warning",
+    "partial_fingerprints": {
+      "primaryLocationLineHash": "a16d374c16f6b63a:1",
+      "primaryLocationStartColumnFingerprint": "26"
+    },
+    "fingerprint": "539df72e1bf719ae"
+  },
+  {
+    "id": "CQLF-R18-0005",
+    "rule_id": "js/xss-through-dom",
+    "rule_name": "js/xss-through-dom",
+    "rule_description": "DOM text reinterpreted as HTML",
+    "rule_help": "# DOM text reinterpreted as HTML\nExtracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.\n\nA webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scripting attack.\n\n\n## Recommendation\nTo guard against cross-site scripting, consider using contextual output encoding/escaping before writing text to the page, or one of the other solutions that are mentioned in the References section below.\n\n\n## Example\nThe following example shows a webpage using a `data-target` attribute to select and manipulate a DOM element using the JQuery library. In the example, the `data-target` attribute is read into the `target` variable, and the `$` function is then suppo",
+    "message": "[DOM text](1) is reinterpreted as HTML without escaping meta-characters.",
+    "severity_score": 7.8,
+    "severity_tier": "high",
+    "cwes": [
+      "cwe-79",
+      "cwe-116"
+    ],
+    "cwe_family": "xss",
+    "locations": [
+      {
+        "file": "sqli/static/js/materialize.js",
+        "start_line": 4618,
+        "end_line": 4618,
+        "start_column": 35
+      }
+    ],
+    "level": "warning",
+    "partial_fingerprints": {
+      "primaryLocationLineHash": "2c06d7f90cd381dc:1",
+      "primaryLocationStartColumnFingerprint": "26"
+    },
+    "fingerprint": "772a6bb456c430c5"
+  },
+  {
+    "id": "CQLF-R18-0006",
+    "rule_id": "js/xss-through-dom",
+    "rule_name": "js/xss-through-dom",
+    "rule_description": "DOM text reinterpreted as HTML",
+    "rule_help": "# DOM text reinterpreted as HTML\nExtracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.\n\nA webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scripting attack.\n\n\n## Recommendation\nTo guard against cross-site scripting, consider using contextual output encoding/escaping before writing text to the page, or one of the other solutions that are mentioned in the References section below.\n\n\n## Example\nThe following example shows a webpage using a `data-target` attribute to select and manipulate a DOM element using the JQuery library. In the example, the `data-target` attribute is read into the `target` variable, and the `$` function is then suppo",
+    "message": "[DOM text](1) is reinterpreted as HTML without escaping meta-characters.\n[DOM text](2) is reinterpreted as HTML without escaping meta-characters.\n[DOM text](3) is reinterpreted as HTML without escaping meta-characters.",
+    "severity_score": 7.8,
+    "severity_tier": "high",
+    "cwes": [
+      "cwe-79",
+      "cwe-116"
+    ],
+    "cwe_family": "xss",
+    "locations": [
+      {
+        "file": "sqli/static/js/materialize.js",
+        "start_line": 4688,
+        "end_line": 4688,
+        "start_column": 22
+      }
+    ],
+    "level": "warning",
+    "partial_fingerprints": {
+      "primaryLocationLineHash": "ecec98c73330e345:1",
+      "primaryLocationStartColumnFingerprint": "9"
+    },
+    "fingerprint": "b4f2ee0d343d3cdd"
+  },
+  {
+    "id": "CQLF-R18-0007",
+    "rule_id": "js/xss-through-dom",
+    "rule_name": "js/xss-through-dom",
+    "rule_description": "DOM text reinterpreted as HTML",
+    "rule_help": "# DOM text reinterpreted as HTML\nExtracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.\n\nA webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scripting attack.\n\n\n## Recommendation\nTo guard against cross-site scripting, consider using contextual output encoding/escaping before writing text to the page, or one of the other solutions that are mentioned in the References section below.\n\n\n## Example\nThe following example shows a webpage using a `data-target` attribute to select and manipulate a DOM element using the JQuery library. In the example, the `data-target` attribute is read into the `target` variable, and the `$` function is then suppo",
+    "message": "[DOM text](1) is reinterpreted as HTML without escaping meta-characters.",
+    "severity_score": 7.8,
+    "severity_tier": "high",
+    "cwes": [
+      "cwe-79",
+      "cwe-116"
+    ],
+    "cwe_family": "xss",
+    "locations": [
+      {
+        "file": "sqli/static/js/materialize.js",
+        "start_line": 7008,
+        "end_line": 7014,
+        "start_column": 21
+      }
+    ],
+    "level": "warning",
+    "partial_fingerprints": {
+      "primaryLocationLineHash": "3c344697fcf437c:1",
+      "primaryLocationStartColumnFingerprint": "14"
+    },
+    "fingerprint": "405f90090a0d8aa0"
+  },
+  {
+    "id": "CQLF-R18-0008",
+    "rule_id": "js/incomplete-sanitization",
+    "rule_name": "js/incomplete-sanitization",
+    "rule_description": "Incomplete string escaping or encoding",
+    "rule_help": "# Incomplete string escaping or encoding\nSanitizing untrusted input is a common technique for preventing injection attacks such as SQL injection or cross-site scripting. Usually, this is done by escaping meta-characters such as quotes in a domain-specific way so that they are treated as normal characters.\n\nHowever, directly using the string `replace` method to perform escaping is notoriously error-prone. Common mistakes include only replacing the first occurrence of a meta-character, or backslash-escaping various meta-characters but not the backslash itself.\n\nIn the former case, later meta-characters are left undisturbed and can be used to subvert the sanitization. In the latter case, preceding a meta-character with a backslash leads to the backslash being escaped, but the meta-character appearing un-escaped, which again makes the sanitization ineffective.\n\nEven if the escaped string is not used in a security-critical context, incomplete escaping may still have undesirable effects, suc",
+    "message": "This does not escape backslash characters in the input.",
+    "severity_score": 7.8,
+    "severity_tier": "high",
+    "cwes": [
+      "cwe-20",
+      "cwe-80",
+      "cwe-116"
+    ],
+    "cwe_family": "xss",
+    "locations": [
+      {
+        "file": "sqli/static/js/materialize.js",
+        "start_line": 1331,
+        "end_line": 1331,
+        "start_column": 10
+      }
+    ],
+    "level": "warning",
+    "partial_fingerprints": {
+      "primaryLocationLineHash": "73a8cb5cd820f688:1",
+      "primaryLocationStartColumnFingerprint": "7"
+    },
+    "fingerprint": "ae0f3bcb5fe20201"
+  },
+  {
+    "id": "CQLF-R18-0009",
+    "rule_id": "py/weak-sensitive-data-hashing",
+    "rule_name": "py/weak-sensitive-data-hashing",
+    "rule_description": "Use of a broken or weak cryptographic hashing algorithm on sensitive data",
+    "rule_help": "# Use of a broken or weak cryptographic hashing algorithm on sensitive data\nUsing a broken or weak cryptographic hash function can leave data vulnerable, and should not be used in security related code.\n\nA strong cryptographic hash function should be resistant to:\n\n* pre-image attacks: if you know a hash value `h(x)`, you should not be able to easily find the input `x`.\n* collision attacks: if you know a hash value `h(x)`, you should not be able to easily find a different input `y` with the same hash value `h(x) = h(y)`.\nIn cases with a limited input space, such as for passwords, the hash function also needs to be computationally expensive to be resistant to brute-force attacks. Passwords should also have an unique salt applied before hashing, but that is not considered by this query.\n\nAs an example, both MD5 and SHA-1 are known to be vulnerable to collision attacks.\n\nSince it's OK to use a weak cryptographic hash function in a non-security context, this query only alerts when these ar",
+    "message": "[Sensitive data (password)](1) is used in a hashing algorithm (MD5) that is insecure for password hashing, since it is not a computationally expensive hash function.",
+    "severity_score": 7.5,
+    "severity_tier": "high",
+    "cwes": [
+      "cwe-327",
+      "cwe-328",
+      "cwe-916"
+    ],
+    "cwe_family": "crypto",
+    "locations": [
+      {
+        "file": "sqli/dao/user.py",
+        "start_line": 41,
+        "end_line": 41,
+        "start_column": 37
+      }
+    ],
+    "level": "warning",
+    "partial_fingerprints": {
+      "primaryLocationLineHash": "72d2427ea7f646a2:1",
+      "primaryLocationStartColumnFingerprint": "28"
+    },
+    "fingerprint": "4c61cb3f3f1109b4"
+  }
+]

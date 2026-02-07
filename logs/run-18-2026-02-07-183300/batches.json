@@ -1,0 +1,157 @@
+[
+  {
+    "batch_id": 1,
+    "cwe_family": "xss",
+    "severity_tier": "high",
+    "max_severity_score": 7.8,
+    "issue_count": 5,
+    "file_count": 1,
+    "issues": [
+      {
+        "id": "CQLF-R18-0001",
+        "rule_id": "js/xss-through-dom",
+        "rule_name": "js/xss-through-dom",
+        "rule_description": "DOM text reinterpreted as HTML",
+        "rule_help": "# DOM text reinterpreted as HTML\nExtracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.\n\nA webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scripting attack.\n\n\n## Recommendation\nTo guard against cross-site scripting, consider using contextual output encoding/escaping before writing text to the page, or one of the other solutions that are mentioned in the References section below.\n\n\n## Example\nThe following example shows a webpage using a `data-target` attribute to select and manipulate a DOM element using the JQuery library. In the example, the `data-target` attribute is read into the `target` variable, and the `$` function is then suppo",
+        "message": "[DOM text](1) is reinterpreted as HTML without escaping meta-characters.",
+        "severity_score": 7.8,
+        "severity_tier": "high",
+        "cwes": [
+          "cwe-79",
+          "cwe-116"
+        ],
+        "cwe_family": "xss",
+        "locations": [
+          {
+            "file": "sqli/static/js/materialize.js",
+            "start_line": 2850,
+            "end_line": 2850,
+            "start_column": 49
+          }
+        ],
+        "level": "warning",
+        "partial_fingerprints": {
+          "primaryLocationLineHash": "d77edebf03cd9bd0:1",
+          "primaryLocationStartColumnFingerprint": "38"
+        },
+        "fingerprint": "bbc3c6f669b187f8"
+      },
+      {
+        "id": "CQLF-R18-0002",
+        "rule_id": "js/xss-through-dom",
+        "rule_name": "js/xss-through-dom",
+        "rule_description": "DOM text reinterpreted as HTML",
+        "rule_help": "# DOM text reinterpreted as HTML\nExtracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.\n\nA webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scripting attack.\n\n\n## Recommendation\nTo guard against cross-site scripting, consider using contextual output encoding/escaping before writing text to the page, or one of the other solutions that are mentioned in the References section below.\n\n\n## Example\nThe following example shows a webpage using a `data-target` attribute to select and manipulate a DOM element using the JQuery library. In the example, the `data-target` attribute is read into the `target` variable, and the `$` function is then suppo",
+        "message": "[DOM text](1) is reinterpreted as HTML without escaping meta-characters.",
+        "severity_score": 7.8,
+        "severity_tier": "high",
+        "cwes": [
+          "cwe-79",
+          "cwe-116"
+        ],
+        "cwe_family": "xss",
+        "locations": [
+          {
+            "file": "sqli/static/js/materialize.js",
+            "start_line": 2856,
+            "end_line": 2856,
+            "start_column": 24
+          }
+        ],
+        "level": "warning",
+        "partial_fingerprints": {
+          "primaryLocationLineHash": "a074acf68db4c029:1",
+          "primaryLocationStartColumnFingerprint": "15"
+        },
+        "fingerprint": "c329a38c14ad6991"
+      },
+      {
+        "id": "CQLF-R18-0003",
+        "rule_id": "js/xss-through-dom",
+        "rule_name": "js/xss-through-dom",
+        "rule_description": "DOM text reinterpreted as HTML",
+        "rule_help": "# DOM text reinterpreted as HTML\nExtracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.\n\nA webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scripting attack.\n\n\n## Recommendation\nTo guard against cross-site scripting, consider using contextual output encoding/escaping before writing text to the page, or one of the other solutions that are mentioned in the References section below.\n\n\n## Example\nThe following example shows a webpage using a `data-target` attribute to select and manipulate a DOM element using the JQuery library. In the example, the `data-target` attribute is read into the `target` variable, and the `$` function is then suppo",
+        "message": "[DOM text](1) is reinterpreted as HTML without escaping meta-characters.",
+        "severity_score": 7.8,
+        "severity_tier": "high",
+        "cwes": [
+          "cwe-79",
+          "cwe-116"
+        ],
+        "cwe_family": "xss",
+        "locations": [
+          {
+            "file": "sqli/static/js/materialize.js",
+            "start_line": 4566,
+            "end_line": 4566,
+            "start_column": 33
+          }
+        ],
+        "level": "warning",
+        "partial_fingerprints": {
+          "primaryLocationLineHash": "992763b7e031b263:1",
+          "primaryLocationStartColumnFingerprint": "26"
+        },
+        "fingerprint": "9fe54db59c216e1f"
+      },
+      {
+        "id": "CQLF-R18-0004",
+        "rule_id": "js/xss-through-dom",
+        "rule_name": "js/xss-through-dom",
+        "rule_description": "DOM text reinterpreted as HTML",
+        "rule_help": "# DOM text reinterpreted as HTML\nExtracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.\n\nA webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scripting attack.\n\n\n## Recommendation\nTo guard against cross-site scripting, consider using contextual output encoding/escaping before writing text to the page, or one of the other solutions that are mentioned in the References section below.\n\n\n## Example\nThe following example shows a webpage using a `data-target` attribute to select and manipulate a DOM element using the JQuery library. In the example, the `data-target` attribute is read into the `target` variable, and the `$` function is then suppo",
+        "message": "[DOM text](1) is reinterpreted as HTML without escaping meta-characters.",
+        "severity_score": 7.8,
+        "severity_tier": "high",
+        "cwes": [
+          "cwe-79",
+          "cwe-116"
+        ],
+        "cwe_family": "xss",
+        "locations": [
+          {
+            "file": "sqli/static/js/materialize.js",
+            "start_line": 4586,
+            "end_line": 4586,
+            "start_column": 33
+          }
+        ],
+        "level": "warning",
+        "partial_fingerprints": {
+          "primaryLocationLineHash": "a16d374c16f6b63a:1",
+          "primaryLocationStartColumnFingerprint": "26"
+        },
+        "fingerprint": "539df72e1bf719ae"
+      },
+      {
+        "id": "CQLF-R18-0005",
+        "rule_id": "js/xss-through-dom",
+        "rule_name": "js/xss-through-dom",
+        "rule_description": "DOM text reinterpreted as HTML",
+        "rule_help": "# DOM text reinterpreted as HTML\nExtracting text from a DOM node and interpreting it as HTML can lead to a cross-site scripting vulnerability.\n\nA webpage with this vulnerability reads text from the DOM, and afterwards adds the text as HTML to the DOM. Using text from the DOM as HTML effectively unescapes the text, and thereby invalidates any escaping done on the text. If an attacker is able to control the safe sanitized text, then this vulnerability can be exploited to perform a cross-site scripting attack.\n\n\n## Recommendation\nTo guard against cross-site scripting, consider using contextual output encoding/escaping before writing text to the page, or one of the other solutions that are mentioned in the References section below.\n\n\n## Example\nThe following example shows a webpage using a `data-target` attribute to select and manipulate a DOM element using the JQuery library. In the example, the `data-target` attribute is read into the `target` variable, and the `$` function is then suppo",
+        "message": "[DOM text](1) is reinterpreted as HTML without escaping meta-characters.",
+        "severity_score": 7.8,
+        "severity_tier": "high",
+        "cwes": [
+          "cwe-79",
+          "cwe-116"
+        ],
+        "cwe_family": "xss",
+        "locations": [
+          {
+            "file": "sqli/static/js/materialize.js",
+            "start_line": 4618,
+            "end_line": 4618,
+            "start_column": 35
+          }
+        ],
+        "level": "warning",
+        "partial_fingerprints": {
+          "primaryLocationLineHash": "2c06d7f90cd381dc:1",
+          "primaryLocationStartColumnFingerprint": "26"
+        },
+        "fingerprint": "772a6bb456c430c5"
+      }
+    ]
+  }
+]
