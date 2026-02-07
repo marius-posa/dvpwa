@@ -2847,7 +2847,7 @@ if (jQuery) {
 
         // Create Text span
         if (allowHtml) {
-          tooltipText = $('<span></span>').html(tooltipText);
+          tooltipText = $('<span></span>').text(tooltipText);
         } else {
           tooltipText = $('<span></span>').text(tooltipText);
         }
@@ -4563,7 +4563,7 @@ if (jQuery) {
     var range_wrapper = '.range-field';
     $(document).on('change', range_type, function (e) {
       var thumb = $(this).siblings('.thumb');
-      thumb.find('.value').html($(this).val());
+      thumb.find('.value').text($(this).val());
 
       if (!thumb.hasClass('active')) {
         showRangeBubble(thumb);
@@ -4583,7 +4583,7 @@ if (jQuery) {
       }
 
       // Set indicator value
-      thumb.find('.value').html($(this).val());
+      thumb.find('.value').text($(this).val());
 
       range_mousedown = true;
       $(this).addClass('active');
@@ -4615,7 +4615,7 @@ if (jQuery) {
 
         var offsetLeft = calcRangeOffset(input);
         thumb.addClass('active').css('left', offsetLeft);
-        thumb.find('.value').html(thumb.siblings(range_type).val());
+        thumb.find('.value').text(thumb.siblings(range_type).val());
       }
     });
 
