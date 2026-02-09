@@ -1,0 +1,152 @@
+Fix 1 CodeQL security issue(s) in https://github.com/marius-posa/dvpwa (branch: main).
+
+Issue IDs: CQLF-R37-0001
+Category: crypto | Severity: HIGH (max CVSS: 7.5)
+
+Fix pattern hint for crypto: Use well-established libraries (e.g. libsodium, OpenSSL) with strong defaults.  Replace weak algorithms (MD5, SHA1, DES, RC4) with modern alternatives (SHA-256+, AES-GCM, ChaCha20-Poly1305).  Use cryptographically secure random number generators.
+
+
+Repository context:
+
+Dependencies:
+  pip: aiohttp, aiohttp-jinja2, aiohttp-session, aiopg, aioredis, async-timeout, attrs, chardet, hiredis, idna, jinja2, markupsafe, multidict, psycopg2, pyyaml, trafaret, trafaret-config, yarl
+
+Issues to fix:
+
+### CQLF-R37-0001: py/weak-sensitive-data-hashing (py/weak-sensitive-data-hashing)
+- Severity: HIGH (7.5)
+- CWE: cwe-327, cwe-328, cwe-916
+- Location(s): sqli/dao/user.py:41
+- Description: [Sensitive data (password)](1) is used in a hashing algorithm (MD5) that is insecure for password hashing, since it is not a computationally expensive hash function.
+- Rule: Use of a broken or weak cryptographic hashing algorithm on sensitive data
+- Guidance: # Use of a broken or weak cryptographic hashing algorithm on sensitive data
+Using a broken or weak cryptographic hash function can leave data vulnerable, and should not be used in security related code.
+
+A strong cryptographic hash function should be resistant to:
+
+* pre-image attacks: if you know a hash value `h(x)`, you should not be able to easily find the input `x`.
+* collision attacks: if you know a hash value `h(x)`, you should not be able to easily find a different input `y` with the same
+- Code context:
+```
+      36 |                 (username,),
+      37 |             )
+      38 |             return User.from_raw(await cur.fetchone())
+      39 | 
+      40 |     def check_password(self, password: str):
+>>>   41 |         return self.pwd_hash == md5(password.encode('utf-8')).hexdigest()
+```
+
+Instructions:
+1. Clone https://github.com/marius-posa/dvpwa and create a new branch from main.
+2. Fix ALL the issues listed above. Track which issue IDs you are fixing.
+3. Ensure fixes don't break existing functionality.
+4. Run existing tests if available to verify.
+5. Create a PR on https://github.com/marius-posa/dvpwa with a clear description listing each issue ID fixed.
+6. Title the PR exactly: 'fix(CQLF-R37-0001): resolve crypto security issues'
+7. In the PR body, list each issue ID (CQLF-R37-0001) and describe the fix applied.
+
+Files to focus on:
+- sqli/dao/user.py
+
+## Structured Output
+
+You MUST maintain a structured output object throughout this session.
+Update it whenever you make meaningful progress.
+Use the following JSON schema:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "analyzing",
+        "fixing",
+        "testing",
+        "creating_pr",
+        "done",
+        "blocked"
+      ],
+      "description": "Current phase of the fix session."
+    },
+    "issues_attempted": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Issue IDs the session is working on."
+    },
+    "issues_fixed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Issue IDs that have been successfully fixed."
+    },
+    "issues_blocked": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "reason"
+        ]
+      },
+      "description": "Issues that could not be fixed, with reasons."
+    },
+    "pull_request_url": {
+      "type": "string",
+      "description": "URL of the created pull request (empty until PR exists)."
+    },
+    "files_changed": {
+      "type": "integer",
+      "description": "Number of files modified so far."
+    },
+    "tests_passing": {
+      "type": "boolean",
+      "description": "Whether existing tests still pass after fixes."
+    }
+  },
+  "required": [
+    "status",
+    "issues_attempted",
+    "issues_fixed",
+    "issues_blocked",
+    "pull_request_url",
+    "files_changed",
+    "tests_passing"
+  ]
+}
+```
+
+Update the structured output at these key moments:
+- When starting analysis: set status to "analyzing", populate issues_attempted
+- When fixing issues: set status to "fixing", update issues_fixed as each is resolved
+- When running tests: set status to "testing", set tests_passing accordingly
+- When creating the PR: set status to "creating_pr", set pull_request_url once created
+- When finished: set status to "done", ensure all fields are final
+- If blocked: set status to "blocked", populate issues_blocked with id and reason
+
+Example initial value:
+```json
+{
+  "status": "analyzing",
+  "issues_attempted": [
+    "CQLF-R37-0001"
+  ],
+  "issues_fixed": [],
+  "issues_blocked": [],
+  "pull_request_url": "",
+  "files_changed": 0,
+  "tests_passing": false
+}
+```

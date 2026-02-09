@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "batches": [
+    {
+      "batch_id": 1,
+      "cwe_family": "crypto",
+      "cwe_families": [
+        "crypto"
+      ],
+      "cross_family": false,
+      "severity_tier": "high",
+      "max_severity_score": 7.5,
+      "issue_count": 1,
+      "file_count": 1,
+      "issues": [
+        {
+          "id": "CQLF-R37-0001",
+          "rule_id": "py/weak-sensitive-data-hashing",
+          "rule_name": "py/weak-sensitive-data-hashing",
+          "rule_description": "Use of a broken or weak cryptographic hashing algorithm on sensitive data",
+          "rule_help": "# Use of a broken or weak cryptographic hashing algorithm on sensitive data\nUsing a broken or weak cryptographic hash function can leave data vulnerable, and should not be used in security related code.\n\nA strong cryptographic hash function should be resistant to:\n\n* pre-image attacks: if you know a hash value `h(x)`, you should not be able to easily find the input `x`.\n* collision attacks: if you know a hash value `h(x)`, you should not be able to easily find a different input `y` with the same hash value `h(x) = h(y)`.\nIn cases with a limited input space, such as for passwords, the hash function also needs to be computationally expensive to be resistant to brute-force attacks. Passwords should also have an unique salt applied before hashing, but that is not considered by this query.\n\nAs an example, both MD5 and SHA-1 are known to be vulnerable to collision attacks.\n\nSince it's OK to use a weak cryptographic hash function in a non-security context, this query only alerts when these ar",
+          "message": "[Sensitive data (password)](1) is used in a hashing algorithm (MD5) that is insecure for password hashing, since it is not a computationally expensive hash function.",
+          "severity_score": 7.5,
+          "severity_tier": "high",
+          "cwes": [
+            "cwe-327",
+            "cwe-328",
+            "cwe-916"
+          ],
+          "cwe_family": "crypto",
+          "locations": [
+            {
+              "file": "sqli/dao/user.py",
+              "start_line": 41,
+              "end_line": 41,
+              "start_column": 37
+            }
+          ],
+          "level": "warning",
+          "partial_fingerprints": {
+            "primaryLocationLineHash": "72d2427ea7f646a2:1",
+            "primaryLocationStartColumnFingerprint": "28"
+          },
+          "fingerprint": "4c61cb3f3f1109b4d403"
+        }
+      ]
+    }
+  ]
+}
