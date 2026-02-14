@@ -38,5 +38,12 @@ class User(NamedTuple):
             )
             return User.from_raw(await cur.fetchone())
 
-    def check_password(self, password: str):
-        return bcrypt.checkpw(password.encode('utf-8'), self.pwd_hash.encode('utf-8'))
+    def check_password(self, password: str) -> bool:
+        try:
+            return bcrypt.checkpw(password.encode('utf-8'), self.pwd_hash.encode('utf-8'))
+        except (ValueError, TypeError):
+            return False
+
+    @staticmethod
+    def hash_password(password: str) -> str:
+        return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
